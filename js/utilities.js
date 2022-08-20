@@ -21,3 +21,8 @@ function clearInputField (input) {
     const getInputField = document.getElementById(input);
     getInputField.value = '';
 }
+function getDisplayValueForNan (value) {
+    const getValue = document.getElementById(value);
+    const getInnerText = getValue.innerText;
+    return getInnerText;
+}
