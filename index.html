@@ -11,51 +11,52 @@
 </head>
 <body>
     <section class="container mx-auto">
-        <h1 class="text-6xl font-bold text-lime-400 text-center mt-7">Money Master</h1>
+        <h1 class="text-6xl font-bold text-lime-400 text-center mb-10">Money Master</h1>
         <div class="flex justify-evenly">
             <div>
                 <img src="img/hero-image.png" alt="">
             </div>
-            <div class="calculation-box flex">
-                <div class="drop-shadow-lg flex-cols justify-center items-center">
-                    <div class="flex-cols justify-center items-center income">
+            <div>
+                <div class="flex-col justify-evenly">
+                    <div>
                         <h2 class="text-center text-2xl font-semibold text-white mb-7">Income</h2>
                         <div class="flex gap-x-12 items-center">
                             <p class="text-xl">Income:</p>
-                            <input class="w-3/4 h-10 px-3" type="text">
+                            <input id="income-input" class="w-3/4 h-10 px-3" type="text">
                         </div>
                     </div>
                     <div class="mt-7">
                         <h2 class="text-center text-2xl font-semibold text-white mb-7">Expenses</h2>
                         <div class="flex gap-x-16 mb-5 items-center">
                             <p class="text-xl">Food:</p>
-                            <input class="w-3/4 h-10 px-3" type="text">
+                            <input id="food-input" class="w-3/4 h-10 px-3" type="text">
                         </div>
                         <div class="flex gap-x-16 mb-5 items-center">
                             <p class="text-xl">Rent:</p>
-                            <input class="w-3/4 h-10 px-3" type="text">
+                            <input id="rent-input" class="w-3/4 h-10 px-3" type="text">
                         </div>
                         <div class="flex gap-x-12 items-center">
                             <p class="text-xl">Cloths:</p>
-                            <input class="w-3/4 h-10 px-3" type="text">
+                            <input id="cloth-input" class="w-3/4 h-10 px-3" type="text">
                         </div>
                     </div>
-                        <button class="btn btn-primary px-16 mt-12">Calculate</button>
-                    <p class="text-center mt-7 text-2xl font-semibold text-green-400">Total Expenses: <span class="px-10 text-neutral-50">00</span></p>
-                    <p class="text-center mt-7 text-2xl font-semibold text-green-400">Balance: <span class="px-10 text-neutral-50">00</span></p>
+                    <button id="calculate-button" class="btn btn-primary px-16 mt-12">Calculate</button>
+                    <p class="text-center mt-7 text-2xl font-semibold text-green-400">Total Expenses: <span id="total-expense" class="px-10 text-neutral-50">00</span></p>
+                    <p class="text-center mt-7 text-2xl font-semibold text-green-400">Balance: <span id="balance" class="px-10 text-neutral-50">00</span></p>
                     <div class="flex gap-x-12 justify-center items-center mt-7">
                         <p class="text-xl">Save:</p>
-                        <input class="w-3/4 h-10 px-3" type="text">
+                        <input id="save-input" class="w-3/4 h-10 px-3" type="text">
                         <p class="text-xl">%</p>
-                            <button class="btn btn-primary px-7">Save</button>
+                            <button id="save-button" class="btn btn-primary px-7">Save</button>
                     </div>
-                    <p class="text-center mt-7 text-2xl font-semibold text-white text-green-400">Saving Amount: <span class="px-10 text-neutral-50">00</span></p>
-                    <p class="text-center mt-7 text-2xl font-semibold text-white text-green-400">Remaining Balance: <span class="px-10 text-neutral-50">00</span></p>
+                    <p class="text-center mt-7 text-2xl font-semibold text-white text-green-400">Saving Amount: <span id="saving-amount" class="px-10 text-neutral-50">00</span></p>
+                    <p class="text-center mt-7 text-2xl font-semibold text-white text-green-400">Remaining Balance: <span id="remaining-balance" class="px-10 text-neutral-50">00</span></p>
                 </div>
             </div>
             
         </div>
     </section>
     <script src="js/utilities.js"></script>
+    <script src="js/event-listener.js"></script>
 </body>
 </html>
