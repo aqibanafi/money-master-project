@@ -16,3 +16,8 @@ function displayValue (displayId, value) {
     const total = getDisplayValue + value;
     findDisplay.innerText = total;
 }
+// Clear Button Function 
+function clearInputField (input) {
+    const getInputField = document.getElementById(input);
+    getInputField.value = '';
+}
