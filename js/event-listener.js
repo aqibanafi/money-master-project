@@ -14,7 +14,35 @@ document.getElementById('calculate-button').addEventListener('click', function()
     const remainingNan = getDisplayValueForNan ('remaining-balance')
     count+= 1
     if(count >= 2) {
-        location.reload();
+        alert("Please Reload Page");
+    }
+    const incomeTest = document.getElementById('income-input');
+    const incomeTestValue = incomeTest.value;
+    const foodTest = document.getElementById('food-input');
+    const foodTestValue = foodTest.value;
+    const rentTest = document.getElementById('rent-input');
+    const rentTestValue = rentTest.value;
+    const clothTest = document.getElementById('cloth-input');
+    const clothTestValue = clothTest.value;
+    if(onlyNumber(incomeTestValue) !== true) {
+        if(incomeTestValue.includes('.') !== true) {
+            alert("Provide Number");
+        }
+    }
+    if(onlyNumber(foodTestValue) !== true) {
+        if(foodTestValue.includes('.') !== true) {
+            alert("Provide Number");
+        }
+    }
+    if(onlyNumber(rentTestValue) !== true) {
+        if(rentTestValue.includes('.') !== true) {
+            alert("Provide Number");
+        }
+    }
+    if(onlyNumber(clothTestValue) !== true) {
+        if(clothTestValue.includes('.') !== true) {
+            alert("Provide Number");
+        }
     }
     if(isNaN(expenseNan && balanceNan && savingNan && remainingNan)) {
         const alert = document.getElementById('alert');

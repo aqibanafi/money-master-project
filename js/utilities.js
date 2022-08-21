@@ -30,3 +30,6 @@ function getDisplayValueForNan (valueInput) {
     const getInnerText = parseInt(getValue.innerText);
     return getInnerText;
 }
+function onlyNumber(str){
+    return /^[0-9.]+$/.test(str);
+}
