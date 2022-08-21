@@ -27,21 +27,25 @@ document.getElementById('calculate-button').addEventListener('click', function()
     if(onlyNumber(incomeTestValue) !== true) {
         if(incomeTestValue.includes('.') !== true) {
             alert("Provide Number");
+            return;
         }
     }
     if(onlyNumber(foodTestValue) !== true) {
         if(foodTestValue.includes('.') !== true) {
             alert("Provide Number");
+            return;
         }
     }
     if(onlyNumber(rentTestValue) !== true) {
         if(rentTestValue.includes('.') !== true) {
             alert("Provide Number");
+            return;
         }
     }
     if(onlyNumber(clothTestValue) !== true) {
         if(clothTestValue.includes('.') !== true) {
             alert("Provide Number");
+            return;
         }
     }
     if(isNaN(expenseNan && balanceNan && savingNan && remainingNan)) {
