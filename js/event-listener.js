@@ -1,10 +1,11 @@
+
 document.getElementById('calculate-button').addEventListener('click', function(){
     const income = inputFromBox ('income-input');
     const food = inputFromBox ('food-input');
     const rent = inputFromBox ('rent-input');
     const cloth = inputFromBox ('cloth-input');
     const totalExpense = food + rent + cloth;
-    clearAllField ();
+    // clearAllField ();
     const result = displayValue ('total-expense', totalExpense)
     const getBalance = income - totalExpense;
     const displayBalance = displayValue ('balance', getBalance)
@@ -29,34 +30,32 @@ document.getElementById('calculate-button').addEventListener('click', function()
     }
 })
 document.getElementById('save-button').addEventListener('click', function () {
-    
     const saveInput = inputFromBox ('save-input');
     if (saveInput > 100){
         alert("Sorry!");
         clearAllField ();
         return;
     }
-    const getBalanceValue = document.getElementById('balance');
-    const getBalanceIntegarValue = parseInt(getBalanceValue.innerText);
-    const income = inputFromBox ('income-input');
+    const income = inputFromBox ('income-input')
     const saveCalculation = income * (saveInput / 100);
-    const inputSaveDisplay = displayValue ('saving-amount', saveCalculation);
-    const saveAmountCheck = getDisplayValueForNan ('saving-amount');
-    const balanceAmountCheck = getDisplayValueForNan ('balance');
-    if (saveAmountCheck > balanceAmountCheck) {
+    const getBalanceValue = getDisplayValueForNan ('balance')
+    if (saveCalculation > getBalanceValue) {
         alert("Saving amount should not higher than balance");
         clearAllField ();
         return;
-    }
-    const afterSaveRemainingBalance = getBalanceIntegarValue - saveCalculation;
+    } else {
+
+    
+    const inputSaveDisplay = displayValue ('saving-amount', saveCalculation);
+    const saveAmountCheck = getDisplayValueForNan ('saving-amount');
+    const afterSaveRemainingBalance = getBalanceValue - saveCalculation;
     const displayRemainingBalance = displayValue ('remaining-balance', afterSaveRemainingBalance);
+    }
     clearInputField ('income-input');
     clearInputField ('food-input');
     clearInputField ('cloth-input');
     clearInputField ('rent-input');
     clearInputField ('save-input');
-    
-    
 })
 function clearAllField () {
     clearInputField ('income-input');
