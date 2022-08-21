@@ -1,5 +1,6 @@
 
 document.getElementById('calculate-button').addEventListener('click', function(){
+    
     const income = inputFromBox ('income-input');
     const food = inputFromBox ('food-input');
     const rent = inputFromBox ('rent-input');
@@ -13,8 +14,8 @@ document.getElementById('calculate-button').addEventListener('click', function()
     const balanceNan = getDisplayValueForNan ('balance')
     const savingNan = getDisplayValueForNan ('saving-amount')
     const remainingNan = getDisplayValueForNan ('remaining-balance')
-    if(isNaN(expenseNan || balanceNan || savingNan || remainingNan)) {
-        alert('Please Enter Number');
+    if(isNaN(expenseNan && balanceNan && savingNan && remainingNan)) {
+        alert("Please Enter Number");
         clearAllField ();
         return;
     }
@@ -31,6 +32,11 @@ document.getElementById('calculate-button').addEventListener('click', function()
 })
 document.getElementById('save-button').addEventListener('click', function () {
     const saveInput = inputFromBox ('save-input');
+    if(isNaN(saveInput)){
+        alert("Please Enter Number");
+        clearAllField ();
+        return;
+    }
     if (saveInput > 100){
         alert("Sorry!");
         clearAllField ();
@@ -63,4 +69,10 @@ function clearAllField () {
     clearInputField ('cloth-input');
     clearInputField ('rent-input');
     clearInputField ('save-input');
+}
+function clearDisplay () {
+    clearDisplay ('total-expense');
+    clearDisplay ('balance');
+    clearDisplay ('saving-amount');
+    clearDisplay ('remaining-balance');
 }

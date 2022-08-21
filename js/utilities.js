@@ -21,6 +21,10 @@ function clearInputField (input) {
     const getInputField = document.getElementById(input);
     getInputField.value = '';
 }
+function clearDisplay (displayValue) {
+    const getDisplay = document.getElementById(displayValue)
+    getDisplay.innerText = '00';
+}
 function getDisplayValueForNan (valueInput) {
     const getValue = document.getElementById(valueInput);
     const getInnerText = parseInt(getValue.innerText);
