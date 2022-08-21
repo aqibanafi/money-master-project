@@ -1,12 +1,10 @@
-
+let count = 0;
 document.getElementById('calculate-button').addEventListener('click', function(){
-    
     const income = inputFromBox ('income-input');
     const food = inputFromBox ('food-input');
     const rent = inputFromBox ('rent-input');
     const cloth = inputFromBox ('cloth-input');
     const totalExpense = food + rent + cloth;
-    // clearAllField ();
     const result = displayValue ('total-expense', totalExpense)
     const getBalance = income - totalExpense;
     const displayBalance = displayValue ('balance', getBalance)
@@ -14,18 +12,28 @@ document.getElementById('calculate-button').addEventListener('click', function()
     const balanceNan = getDisplayValueForNan ('balance')
     const savingNan = getDisplayValueForNan ('saving-amount')
     const remainingNan = getDisplayValueForNan ('remaining-balance')
+    count+= 1
+    if(count >= 2) {
+        location.reload();
+    }
     if(isNaN(expenseNan && balanceNan && savingNan && remainingNan)) {
-        alert("Please Enter Number");
-        clearAllField ();
+        const alert = document.getElementById('alert');
+        alert.innerText = "Please Enter Number to Get Output"
+        alert.style.display = 'block';
         return;
     }
     if(income < 0 || food < 0 || rent < 0 || cloth < 0) {
-        alert("Enter Positive Number");
+        const alert = document.getElementById('alert');
+        alert.innerText = "Please Enter Positive Number"
+        alert.style.display = 'block';
         clearAllField ();
+        
         return;
     }
     if (totalExpense > income) {
-        alert("Your Expense is More Than Your Income");
+        const alert = document.getElementById('alert');
+        alert.innerText = "Your Expense is More Than Your Income"
+        alert.style.display = 'block';
         clearAllField ();
         return;
     }
@@ -33,12 +41,16 @@ document.getElementById('calculate-button').addEventListener('click', function()
 document.getElementById('save-button').addEventListener('click', function () {
     const saveInput = inputFromBox ('save-input');
     if(isNaN(saveInput)){
-        alert("Please Enter Number");
+        const alert = document.getElementById('alert');
+        alert.innerText = "Please Enter Number to Get Output"
+        alert.style.display = 'block';
         clearAllField ();
         return;
     }
     if (saveInput > 100){
-        alert("Sorry!");
+        const alert = document.getElementById('alert');
+        alert.innerText = "Input More Than 100% is Not Accetable"
+        alert.style.display = 'block';
         clearAllField ();
         return;
     }
@@ -46,7 +58,9 @@ document.getElementById('save-button').addEventListener('click', function () {
     const saveCalculation = income * (saveInput / 100);
     const getBalanceValue = getDisplayValueForNan ('balance')
     if (saveCalculation > getBalanceValue) {
-        alert("Saving amount should not higher than balance");
+        const alert = document.getElementById('alert');
+        alert.innerText = "Saving amount should not higher than balance"
+        alert.style.display = 'block';
         clearAllField ();
         return;
     } else {
